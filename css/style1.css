@@ -13,50 +13,62 @@ body {
 /* Selector theo thẻ */
 h1 {
   font-size: 2rem;
-  color: #0066cc;
 }
 
 h2 {
   color: #004499;
 }
 
-/* Selector theo id */
-#top {
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Selector theo class */
+.site-header {
   background-color: #0066cc;
   color: white;
   padding: 20px;
   text-align: center;
 }
 
-#about {
-  background-color: #e0f0ff;
-  padding: 20px;
+.main-nav {
+  background-color: #004499;
+  padding: 10px;
 }
 
-/* Selector theo class */
+.main-nav a {
+  color: white;
+  text-decoration: none;
+  margin: 0 10px;
+  font-weight: bold;
+}
+
+.main-nav a:hover {
+  color: #ffcc00;
+}
+
 .hero {
   padding: 20px;
   text-align: center;
 }
 
 .about {
+  padding: 20px;
+  background-color: #e0f0ff;
   border-top: 2px solid #0066cc;
 }
 
-/* Selector kết hợp */
-nav a {
-  display: inline-block;
-  margin: 10px;
-  color: #ff6600;
-  text-decoration: none;
-  font-weight: bold;
+.topic-list {
+  line-height: 2;
 }
 
-nav a:hover {
-  color: #cc4400;
+/* Selector theo id */
+#main-title {
+  font-size: 2.5rem;
+  letter-spacing: 2px;
 }
 
-img {
-  max-width: 100%;
-  height: auto;
+#about {
+  margin-top: 20px;
 }
