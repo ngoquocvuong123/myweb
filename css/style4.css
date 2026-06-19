@@ -1,0 +1,114 @@
+/* Chặng 1: liên kết CSS ngoài và selector cơ bản */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  color: #1f2937;
+  background-color: #f8fafc;
+}
+
+h1, h2, h3, p {
+  margin-top: 0;
+}
+
+a {
+  color: #2563eb;
+}
+
+
+/* Chặng 2: class, id, selector kết hợp và cascade */
+.site-header {
+  padding: 18px 8%;
+  background-color: #ffffff;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.brand {
+  font-weight: 800;
+  font-size: 24px;
+}
+
+.main-nav a {
+  margin-right: 16px;
+  text-decoration: none;
+  font-weight: 700;
+}
+
+#main-title {
+  color: #1d4ed8;
+}
+
+
+/* Chặng 3: màu sắc, nền và phong cách nhận diện */
+:root {
+  --primary: #2563eb;
+  --accent: #f97316;
+  --soft: #eff6ff;
+  --dark: #111827;
+}
+
+.hero {
+  padding: 80px 8%;
+  color: white;
+  background: linear-gradient(135deg, var(--primary), #06b6d4);
+}
+
+.primary-button {
+  display: inline-block;
+  padding: 12px 18px;
+  background-color: var(--accent);
+  color: #fff;
+  border-radius: 999px;
+  text-decoration: none;
+}
+
+.swatches {
+  display: flex;
+  gap: 12px;
+}
+
+.swatch {
+  padding: 18px;
+  border-radius: 16px;
+  color: white;
+}
+
+.swatch-primary { background-color: var(--primary); }
+.swatch-accent { background-color: var(--accent); }
+.swatch-soft { color: var(--dark); background-color: var(--soft); }
+
+
+/* Chặng 4: typography, căn chỉnh, line-height */
+.section {
+  padding: 56px 8%;
+}
+
+h1 {
+  font-size: clamp(36px, 6vw, 72px);
+  line-height: 1.05;
+}
+
+h2 {
+  font-size: 32px;
+  color: var(--dark);
+  text-align: center;
+}
+
+p, li {
+  font-size: 18px;
+  line-height: 1.7;
+}
+
+.lead {
+  font-size: 22px;
+  font-weight: 600;
+}
+
+blockquote {
+  font-size: 24px;
+  font-style: italic;
+  text-align: center;
+}
