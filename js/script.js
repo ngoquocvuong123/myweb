@@ -49,3 +49,42 @@ if (themeSelect) {
     }
   });
 }
+BÀI 7: TÌM KIẾM NHANH NỘI DUNG TRONG WEBSITE
+     ------------------------------------------------------------
+     Yêu cầu:
+     1. Ô tìm kiếm có id="searchInput".
+     2. Các thẻ nội dung cần tìm kiếm gắn class search-item.
+     3. Khi người dùng gõ, JS lọc các thẻ có chứa từ khóa.
+     4. Không phân biệt chữ hoa/chữ thường.
+     ============================================================ */
+  const searchInput = document.getElementById("searchInput");
+  const searchItems = document.querySelectorAll(".search-item");
+  const searchNoResult = document.getElementById("searchNoResult");
+ 
+  if (searchInput && searchItems.length > 0) {
+    searchInput.addEventListener("keyup", function () {
+      const keyword = searchInput.value.toLowerCase().trim();
+      let visibleCount = 0;
+ 
+      searchItems.forEach(function (item) {
+        const text = item.textContent.toLowerCase();
+        if (text.includes(keyword)) {
+          item.style.display = "";
+          visibleCount++;
+        } else {
+          item.style.display = "none";
+        }
+      });
+ 
+      // Hiện thông báo nếu không có kết quả nào khớp
+      if (searchNoResult) {
+        if (visibleCount === 0 && keyword !== "") {
+          searchNoResult.classList.remove("hidden");
+        } else {
+          searchNoResult.classList.add("hidden");
+        }
+      }
+    });
+  }
+ 
+});
