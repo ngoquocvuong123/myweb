@@ -1,9 +1,20 @@
+const siteName = "MyWeb - Du lịch Nha Trang";
+let topic = "Giới thiệu vẻ đẹp và ẩm thực Nha Trang";
+let imageCount = 5;
+let isReady = true;
+
+console.log("Website:", siteName);
+console.log("Chủ đề:", topic);
+console.log("Số ảnh:", imageCount);
+console.log("Đã sẵn sàng dùng JS?", isReady);
+console.log("Kiểu dữ liệu topic:", typeof topic);
+
 const mainTitle = document.getElementById("mainTitle");
 const welcomeText = document.getElementById("welcomeText");
 
 if (mainTitle && welcomeText) {
-    mainTitle.textContent = "Khám Phá Du Lịch Nha Trang";
-    welcomeText.textContent = "Chào mừng bạn đến với vương quốc biển xanh, cát trắng và nắng vàng!";
+  mainTitle.textContent = "MyWeb đã có JavaScript!";
+  welcomeText.textContent = "Nội dung này được cập nhật bằng file js/script.js.";
 }
 
 const helloBtn = document.getElementById("helloBtn");
@@ -15,10 +26,11 @@ if (helloBtn && helloResult) {
   });
 }
 
-const themeBtn = document.getElementById("themeBtn");
+const toggleAboutBtn = document.getElementById("toggleAboutBtn");
+const aboutContent = document.getElementById("aboutContent");
 
-if (themeBtn) {
-  themeBtn.addEventListener("click", function () {
-    document.body.classList.toggle("dark-mode");
+if (toggleAboutBtn && aboutContent) {
+  toggleAboutBtn.addEventListener("click", function () {
+    aboutContent.classList.toggle("hidden");
   });
 }
