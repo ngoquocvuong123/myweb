@@ -68,3 +68,18 @@ if (menuToggle && mainMenu) {
     });
   });
 }
+// --- BÀI 6: CHỌN MÀU HOẶC CHỦ ĐỀ GIAO DIỆN ---
+const themeSelect = document.getElementById("themeSelect");
+
+if (themeSelect) {
+  // Lắng nghe sự kiện người dùng thay đổi lựa chọn trong thẻ select
+  themeSelect.addEventListener("change", function () {
+    // Trước tiên xóa bỏ các class chủ đề cũ để reset về mặc định
+    document.body.classList.remove("dark-mode", "warm-mode");
+    
+    // Nếu người dùng chọn một chủ đề khác rỗng, tiến hành thêm class đó vào body
+    if (themeSelect.value !== "") {
+      document.body.classList.add(themeSelect.value);
+    }
+  });
+}
