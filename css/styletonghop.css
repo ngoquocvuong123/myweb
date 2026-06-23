@@ -623,3 +623,41 @@ body.dark-mode #searchInput {
 body.dark-mode #searchInput::placeholder {
   color: #9ca3af;
 }
+/* ============================================================
+   BÀI 8: CSS CÁC NÚT LỌC GALLERY THEO NHÓM
+   ============================================================ */
+.filter-buttons-container {
+  text-align: center;
+  margin-bottom: 25px;
+}
+
+.filter-btn {
+  background-color: #f3f4f6;
+  border: 1px solid #d1d5db;
+  padding: 8px 18px;
+  margin: 0 6px 10px 6px;
+  font-size: 14px;
+  font-weight: 600;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  color: #374151;
+}
+
+.filter-btn:hover {
+  background-color: #007bff;
+  color: #ffffff;
+  border-color: #007bff;
+}
+
+/* Tự động đổi màu nút bấm khi bật giao diện tối (Dark mode) */
+body.dark-mode .filter-btn {
+  background-color: #374151;
+  border-color: #4b5563;
+  color: #f3f4f6;
+}
+body.dark-mode .filter-btn:hover {
+  background-color: #3b82f6;
+  border-color: #3b82f6;
+  color: #ffffff;
+}
