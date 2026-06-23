@@ -10,28 +10,15 @@
 
 <header class="site-header" id="top">
   <div class="brand">Du Lịch Nha Trang</div>
-
-  <div class="header-right">
-    <!-- BÀI 6: Hộp chọn chủ đề giao diện -->
-    <select id="themeSelect" title="Chọn giao diện">
-      <option value="">🎨 Giao diện mặc định</option>
-      <option value="dark-mode">🌙 Nền tối</option>
-      <option value="warm-mode">🌅 Nền ấm</option>
-    </select>
-
-    <!-- BÀI 5: Nút Menu responsive -->
-    <button id="menuToggle" class="menu-toggle">☰ Menu</button>
-
-    <nav class="main-nav" id="mainMenu" aria-label="Điều hướng chính">
-      <a href="#hero">Trang chủ</a>
-      <a href="#about">Giới thiệu</a>
-      <a href="#features">Điểm đến</a>
-      <a href="#gallery">Thư viện</a>
-      <a href="#layout">Khám phá</a>
-      <a href="#portfolio">Tham quan</a>
-      <a href="#contact">Liên hệ</a>
-    </nav>
-  </div>
+  <nav class="main-nav" aria-label="Điều hướng chính">
+    <a href="#hero">Trang chủ</a>
+    <a href="#about">Giới thiệu</a>
+    <a href="#features">Điểm đến</a>
+    <a href="#gallery">Thư viện</a>
+    <a href="#layout">Khám phá</a>
+    <a href="#portfolio">Tham quan</a>
+    <a href="#contact">Liên hệ</a>
+  </nav>
 </header>
 
 <main>
@@ -47,6 +34,7 @@
 
   <section class="section about-section" id="about">
     <h2>Giới thiệu Nha Trang</h2>
+    
     <div id="aboutContent">
       <p>Nha Trang là thành phố ven biển thuộc tỉnh Khánh Hòa, nổi tiếng với bãi biển dài 6km tuyệt đẹp và khí hậu nhiệt đới ôn hòa quanh năm.</p>
       <ul class="topic-list">
@@ -55,7 +43,8 @@
         <li>Nhiều điểm du lịch hấp dẫn như Vinpearl, Tháp Bà Ponagar.</li>
       </ul>
     </div>
-    <button id="toggleAboutBtn">Ẩn nội dung</button>
+    
+    <button id="toggleAboutBtn">Ẩn/Hiện nội dung</button>
   </section>
 
   <section class="section style-guide" id="style-guide">
@@ -73,21 +62,10 @@
     <blockquote>"Biển Nha Trang xanh như ngọc, cát trắng mịn như lụa - một thiên đường nhiệt đới giữa lòng Việt Nam."</blockquote>
   </section>
 
-  <!-- ============================================================
-       BÀI 7: Ô TÌM KIẾM NHANH NỘI DUNG
-       ============================================================ -->
-  <section class="section search-section" id="search">
-    <h2>Tìm kiếm điểm đến</h2>
-    <div class="search-box">
-      <input type="text" id="searchInput" placeholder="🔍 Nhập từ khóa để tìm (ví dụ: biển, tháp, vinpearl...)">
-    </div>
-    <p id="searchNoResult" class="search-no-result hidden">Không tìm thấy nội dung phù hợp.</p>
-  </section>
-
   <section class="section feature-section" id="features">
     <h2>Điểm đến nổi bật</h2>
     <div class="card-row">
-      <article class="feature-card search-item">
+      <article class="feature-card">
         <img src="img/biennhatrang.jpg" alt="Biển Nha Trang">
         <div class="card-body">
           <h3>🏖️ Bãi biển Nha Trang</h3>
@@ -95,7 +73,7 @@
           <a href="#" class="btn">Xem thêm</a>
         </div>
       </article>
-      <article class="feature-card search-item">
+      <article class="feature-card">
         <img src="img/haisannhatrang.jpg" alt="Hải sản Nha Trang">
         <div class="card-body">
           <h3>🦐 Hải sản tươi ngon</h3>
@@ -103,7 +81,7 @@
           <a href="#" class="btn">Xem thêm</a>
         </div>
       </article>
-      <article class="feature-card search-item">
+      <article class="feature-card">
         <img src="img/vin.jpg" alt="VinPearl">
         <div class="card-body">
           <h3>🎡 Vinpearl Land</h3>
@@ -161,27 +139,27 @@
   <section class="section portfolio-section" id="portfolio">
     <h2>Lưới điểm tham quan</h2>
     <div class="portfolio-grid">
-      <article class="search-item">
+      <article>
         <h3>🏖️ Bãi Trường</h3>
         <p>Bãi biển đẹp nhất Nha Trang với cát trắng mịn.</p>
       </article>
-      <article class="search-item">
+      <article>
         <h3>🏯 Tháp Bà Ponagar</h3>
         <p>Di tích lịch sử Chăm Pa hơn 1000 năm tuổi.</p>
       </article>
-      <article class="search-item">
+      <article>
         <h3>🎡 Vinpearl Land</h3>
         <p>Công viên giải trí trên đảo Hòn Tre tuyệt đẹp.</p>
       </article>
-      <article class="search-item">
+      <article>
         <h3>🐠 Hòn Mun</h3>
         <p>Khu bảo tồn biển lý tưởng để lặn ngắm san hô.</p>
       </article>
-      <article class="search-item">
+      <article>
         <h3>🌊 Đảo Hòn Tằm</h3>
         <p>Hòn đảo thiên nhiên hoang sơ, nước biển trong vắt.</p>
       </article>
-      <article class="search-item">
+      <article>
         <h3>🦞 Chợ Đầm</h3>
         <p>Khu chợ hải sản nổi tiếng với giá cả hợp lý.</p>
       </article>
@@ -204,7 +182,6 @@
 <footer class="site-footer">
   <p>© 2026 Du Lịch Nha Trang. Website cá nhân hoàn chỉnh bằng HTML và CSS.</p>
 </footer>
-
-<script src="js/script.js"></script>
+  <script src="js/script.js"></script>
 </body>
 </html>
