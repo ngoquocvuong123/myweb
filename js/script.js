@@ -83,3 +83,27 @@ if (themeSelect) {
     }
   });
 }
+// --- BÀI 7: TÌM KIẾM NHANH NỘI DUNG TRONG WEBSITE ---
+const searchInput = document.getElementById("searchInput");
+const searchItems = document.querySelectorAll(".search-item");
+
+if (searchInput && searchItems.length > 0) {
+  // Lắng nghe sự kiện khi người dùng gõ từ khóa vào ô input
+  searchInput.addEventListener("keyup", function () {
+    // Chuyển từ khóa về chữ thường và xóa khoảng trắng thừa ở 2 đầu
+    const keyword = searchInput.value.toLowerCase().trim();
+
+    // Duyệt qua từng địa danh (thẻ figure) trên trang
+    searchItems.forEach(function (item) {
+      // Lấy toàn bộ nội dung chữ bên trong thẻ figure chuyển thành chữ thường
+      const text = item.textContent.toLowerCase();
+      
+      // Nếu nội dung chứa từ khóa cần tìm kiếm
+      if (text.includes(keyword)) {
+        item.style.display = ""; // Hiển thị phần tử
+      } else {
+        item.style.display = "none"; // Ẩn phần tử nếu không khớp
+      }
+    });
+  });
+}
