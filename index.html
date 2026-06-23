@@ -112,30 +112,40 @@
       <input type="text" id="searchInput" placeholder="Nhập tên địa danh để tìm nhanh...">
     </div>
 
+    <div class="filter-buttons-container">
+      <button class="filter-btn" data-filter="all">Tất cả</button>
+      <button class="filter-btn" data-filter="nature">Cảnh thiên nhiên</button>
+      <button class="filter-btn" data-filter="food">Ẩm thực</button>
+      <button class="filter-btn" data-filter="fun">Giải trí</button>
+    </div>
+
     <div class="image-strip">
-      <figure class="search-item">
+      <figure class="search-item gallery-item" data-category="nature">
         <img src="img/biennhatrang.jpg" alt="Biển Nha Trang">
         <figcaption>Bãi biển Nha Trang xanh đẹp</figcaption>
       </figure>
-      <figure class="search-item">
+
+      <figure class="search-item gallery-item" data-category="food">
         <img src="img/haisannhatrang.jpg" alt="Hải sản Nha Trang">
         <figcaption>Hải sản tươi ngon Nha Trang</figcaption>
       </figure>
-      <figure class="search-item">
+
+      <figure class="search-item gallery-item" data-category="fun">
         <img src="img/vin.jpg" alt="Vinpearl Nha Trang">
         <figcaption>Vinpearl Land trên đảo Hòn Tre</figcaption>
       </figure>
-      <figure class="search-item">
+
+      <figure class="search-item gallery-item" data-category="nature">
         <img src="img/thapba.jpg" alt="Tháp Bà Ponagar">
         <figcaption>Tháp Bà Ponagar cổ kính</figcaption>
       </figure>
-      <figure class="search-item">
+
+      <figure class="search-item gallery-item" data-category="nature">
         <img src="img/honmun.jpg" alt="Hòn Mun Nha Trang">
         <figcaption>Lặn biển Hòn Mun ngắm san hô</figcaption>
       </figure>
     </div>
   </section>
-
   <section class="section layout-section" id="layout">
     <h2>Bố cục hai vùng bằng Flexbox</h2>
     <div class="content-layout">
