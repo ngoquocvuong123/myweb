@@ -10,7 +10,6 @@ body {
   font-family: 'Segoe UI', Arial, sans-serif;
   color: #1f2937;
   background-color: #f8fafc;
-  transition: background-color 0.3s, color 0.3s;
 }
 
 h1, h2, h3, h4, p { margin: 0; }
@@ -47,38 +46,12 @@ img {
   top: 0;
   z-index: 100;
   box-shadow: 0 1px 8px rgba(0,0,0,0.06);
-  transition: background 0.3s, border-color 0.3s;
 }
 
 .brand {
   font-weight: 800;
   font-size: 20px;
   color: var(--primary);
-}
-
-/* Khu vực bên phải header: nav + theme select */
-.header-right {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-}
-
-/* --- Hộp chọn chủ đề --- */
-#themeSelect {
-  padding: 7px 12px;
-  border: 2px solid var(--primary);
-  border-radius: 8px;
-  font-size: 13px;
-  font-weight: 600;
-  color: var(--primary);
-  background: white;
-  cursor: pointer;
-  outline: none;
-  transition: background 0.2s, color 0.2s;
-}
-
-#themeSelect:hover {
-  background: var(--soft);
 }
 
 .main-nav {
@@ -156,6 +129,7 @@ img {
   transform: translateY(-1px);
 }
 
+/* Lời chào hiện sau khi click */
 #helloResult {
   margin-top: 16px;
   font-size: 17px;
@@ -165,6 +139,7 @@ img {
   min-height: 24px;
 }
 
+/* Nút helloBtn trong hero */
 #helloBtn {
   margin-left: 12px;
   padding: 12px 24px;
@@ -273,7 +248,7 @@ blockquote {
 }
 
 /* ============================================================
-   CARDS
+   CARDS (Điểm đến nổi bật)
    ============================================================ */
 .card-row {
   display: flex;
@@ -301,6 +276,7 @@ blockquote {
   width: 100%;
   height: 160px;
   object-fit: cover;
+  border-radius: 0;
 }
 
 .card-body {
@@ -328,7 +304,7 @@ blockquote {
 .btn:hover { background: #1d4ed8; }
 
 /* ============================================================
-   GALLERY
+   GALLERY (Thư viện ảnh)
    ============================================================ */
 .image-strip {
   display: flex;
@@ -350,6 +326,7 @@ blockquote {
   width: 100%;
   height: 130px;
   object-fit: cover;
+  border-radius: 0;
 }
 
 figcaption {
@@ -361,7 +338,7 @@ figcaption {
 }
 
 /* ============================================================
-   LAYOUT
+   LAYOUT (Flexbox 2 cột)
    ============================================================ */
 .content-layout {
   display: flex;
@@ -370,6 +347,7 @@ figcaption {
 }
 
 .main-content { flex: 2; }
+
 .main-content p { margin: 10px 0 16px; }
 
 .side-panel {
@@ -387,7 +365,7 @@ figcaption {
 }
 
 /* ============================================================
-   PORTFOLIO GRID
+   PORTFOLIO GRID (Lưới tham quan)
    ============================================================ */
 .portfolio-grid {
   display: grid;
@@ -404,7 +382,10 @@ figcaption {
   transition: transform 0.2s;
 }
 
-.portfolio-grid article:hover { transform: translateY(-2px); }
+.portfolio-grid article:hover {
+  transform: translateY(-2px);
+}
+
 .portfolio-grid article h3 { margin-bottom: 6px; }
 .portfolio-grid article p { font-size: 14px; }
 
@@ -482,16 +463,17 @@ button[type="submit"]:hover { background: #1d4ed8; }
 @media (max-width: 480px) {
   .main-nav { display: none; }
   .portfolio-grid { grid-template-columns: 1fr; }
-  #themeSelect { font-size: 12px; padding: 6px 8px; }
 }
+
 
 /* ============================================================
-   BÀI 4: CSS ẨN/HIỆN NỘI DUNG
+   BÀI 4: CSS ẨN/HIỆN NỘI DUNG GIỚI THIỆU
    ============================================================ */
 .hidden {
-  display: none !important;
+  display: none !important; /* Lớp ẩn nội dung bắt buộc */
 }
 
+/* Định hình lại nút Bấm Ẩn/Hiện một chút cho đẹp mắt */
 #toggleAboutBtn {
   margin-top: 14px;
   padding: 10px 20px;
@@ -505,173 +487,6 @@ button[type="submit"]:hover { background: #1d4ed8; }
   transition: background 0.2s;
 }
 
-#toggleAboutBtn:hover { background-color: #1d4ed8; }
-
-/* ============================================================
-   BÀI 5: CSS MENU RESPONSIVE
-   ============================================================ */
-.menu-toggle {
-  display: none;
-  padding: 8px 16px;
-  background-color: var(--primary);
-  color: white;
-  border: none;
-  border-radius: 8px;
-  font-weight: 700;
-  font-size: 14px;
-  cursor: pointer;
-  transition: background 0.2s;
+#toggleAboutBtn:hover {
+  background-color: #1d4ed8;
 }
-
-.menu-toggle:hover { background-color: #1d4ed8; }
-
-@media (max-width: 768px) {
-  .menu-toggle { display: inline-block; }
-
-  .main-nav {
-    display: none;
-    flex-direction: column;
-    position: absolute;
-    top: 100%;
-    left: 0;
-    width: 100%;
-    background-color: white;
-    padding: 10px 0;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-    border-top: 1px solid var(--border);
-    gap: 0;
-  }
-
-  .main-nav a {
-    padding: 12px 20px;
-    border-radius: 0;
-    width: 100%;
-  }
-
-  .main-nav.active { display: flex; }
-}
-
-/* ============================================================
-   BÀI 6: CHỦ ĐỀ GIAO DIỆN (THEME)
-   ============================================================ */
-
-/* --- Dark Mode: Nền tối --- */
-body.dark-mode {
-  background: #111827;
-  color: #f8fafc;
-}
-
-body.dark-mode .site-header {
-  background: #1f2937;
-  border-color: #374151;
-}
-
-body.dark-mode .brand { color: #60a5fa; }
-
-body.dark-mode #themeSelect {
-  background: #1f2937;
-  color: #60a5fa;
-  border-color: #60a5fa;
-}
-
-body.dark-mode .main-nav a { color: #d1d5db; }
-body.dark-mode .main-nav a:hover { background: #374151; color: #60a5fa; }
-
-body.dark-mode h2 { color: #f8fafc; }
-body.dark-mode h3 { color: #60a5fa; }
-body.dark-mode p, body.dark-mode li { color: #d1d5db; }
-
-body.dark-mode .style-guide { background: #1f2937; }
-body.dark-mode .side-panel  { background: #1f2937; }
-
-body.dark-mode .feature-card,
-body.dark-mode .portfolio-grid article {
-  background: #1f2937;
-  border-color: #374151;
-}
-
-body.dark-mode blockquote {
-  background: #1f2937;
-  border-color: #60a5fa;
-  color: #9ca3af;
-}
-
-body.dark-mode .image-strip figure { background: #1f2937; border-color: #374151; }
-body.dark-mode figcaption { color: #9ca3af; }
-
-body.dark-mode input,
-body.dark-mode textarea {
-  background: #1f2937;
-  color: #f8fafc;
-  border-color: #374151;
-}
-
-body.dark-mode label { color: #d1d5db; }
-
-/* --- Warm Mode: Nền ấm --- */
-body.warm-mode {
-  background: #fff7ed;
-  color: #431407;
-}
-
-body.warm-mode .site-header {
-  background: #ffedd5;
-  border-color: #fed7aa;
-}
-
-body.warm-mode .brand { color: #c2410c; }
-
-body.warm-mode #themeSelect {
-  background: #ffedd5;
-  color: #c2410c;
-  border-color: #c2410c;
-}
-
-body.warm-mode .main-nav a { color: #7c2d12; }
-body.warm-mode .main-nav a:hover { background: #fed7aa; color: #c2410c; }
-
-body.warm-mode .hero {
-  background: linear-gradient(135deg, #c2410c 0%, #f97316 100%);
-}
-
-body.warm-mode h2 { color: #431407; }
-body.warm-mode h3 { color: #c2410c; }
-body.warm-mode p, body.warm-mode li { color: #7c2d12; }
-
-body.warm-mode .style-guide { background: #ffedd5; }
-body.warm-mode .side-panel  { background: #ffedd5; }
-
-body.warm-mode .feature-card,
-body.warm-mode .portfolio-grid article {
-  background: #fffbf7;
-  border-color: #fed7aa;
-}
-
-body.warm-mode blockquote {
-  background: #ffedd5;
-  border-color: #f97316;
-  color: #92400e;
-}
-
-body.warm-mode .image-strip figure { background: #fffbf7; border-color: #fed7aa; }
-body.warm-mode figcaption { color: #92400e; }
-
-body.warm-mode .btn { background: #c2410c; }
-body.warm-mode .btn:hover { background: #9a3412; }
-
-body.warm-mode button[type="submit"],
-body.warm-mode #toggleAboutBtn,
-body.warm-mode .menu-toggle { background: #c2410c; }
-
-body.warm-mode button[type="submit"]:hover,
-body.warm-mode #toggleAboutBtn:hover,
-body.warm-mode .menu-toggle:hover { background: #9a3412; }
-
-body.warm-mode input,
-body.warm-mode textarea {
-  background: #fffbf7;
-  border-color: #fed7aa;
-  color: #431407;
-}
-
-body.warm-mode label { color: #7c2d12; }
