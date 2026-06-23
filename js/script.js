@@ -42,3 +42,29 @@ if (toggleAboutBtn && aboutContent) {
     aboutContent.classList.toggle("hidden");
   });
 }
+// --- BÀI 5: MENU TƯƠNG TÁC CHO WEBSITE ---
+const menuToggle = document.getElementById("menuToggle");
+const mainMenu = document.getElementById("mainMenu");
+
+if (menuToggle && mainMenu) {
+  // Sự kiện khi bấm vào nút Menu (Ẩn/Hiện)
+  menuToggle.addEventListener("click", function () {
+    mainMenu.classList.toggle("active");
+    
+    // MỞ RỘNG: Đổi chữ nút từ "☰ Menu" sang "✖ Đóng menu" và ngược lại
+    if (mainMenu.classList.contains("active")) {
+      menuToggle.textContent = "✖ Đóng menu";
+    } else {
+      menuToggle.textContent = "☰ Menu";
+    }
+  });
+
+  // MỞ RỘNG: Khi bấm vào một liên kết bất kỳ trong menu, tự động đóng menu lại
+  const menuLinks = mainMenu.querySelectorAll("a");
+  menuLinks.forEach(function (link) {
+    link.addEventListener("click", function () {
+      mainMenu.classList.remove("active");
+      menuToggle.textContent = "☰ Menu";
+    });
+  });
+}
