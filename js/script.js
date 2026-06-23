@@ -1,7 +1,7 @@
 const siteName = "MyWeb - Du lịch Nha Trang"; 
 let topic = "Giới thiệu vẻ đẹp và ẩm thực Nha Trang";
-let imageCount = 5; // Số lượng ảnh bạn đang có
-let isReady = true;  // Trạng thái hoàn thành
+let imageCount = 5; 
+let isReady = true; 
 
 console.log("Website:", siteName);
 console.log("Chủ đề:", topic);
