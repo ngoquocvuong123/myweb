@@ -1,10 +1,7 @@
-const siteName = "MyWeb - Du lịch Nha Trang"; 
-let topic = "Giới thiệu vẻ đẹp và ẩm thực Nha Trang";
-let imageCount = 5; 
-let isReady = true; 
+const mainTitle = document.getElementById("mainTitle");
+const welcomeText = document.getElementById("welcomeText");
 
-console.log("Website:", siteName);
-console.log("Chủ đề:", topic);
-console.log("Số ảnh:", imageCount);
-console.log("Đã sẵn sàng dùng JS?", isReady);
-console.log("Kiểu dữ liệu topic:", typeof topic);
+if (mainTitle && welcomeText) {
+    mainTitle.textContent = "Khám Phá Du Lịch Nha Trang";
+    welcomeText.textContent = "Chào mừng bạn đến với vương quốc biển xanh, cát trắng và nắng vàng!";
+}
