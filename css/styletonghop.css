@@ -545,3 +545,46 @@ button[type="submit"]:hover { background: #1d4ed8; }
     display: flex;
   }
 }
+/* ============================================================
+   BÀI 6: CSS ĐỔI CHỦ ĐỀ GIAO DIỆN (THEME SELECT)
+   ============================================================ */
+
+/* Định dạng một chút cho hộp chọn select nhìn đẹp hơn */
+.theme-select {
+  padding: 6px 10px;
+  border-radius: 6px;
+  border: 1px solid var(--border);
+  background-color: white;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  outline: none;
+}
+
+/* --- TRẠNG THÁI 1: NỀN TỐI (DARK MODE) --- */
+body.dark-mode {
+  background-color: #111827 !important;
+  color: #f8fafc !important;
+}
+
+/* Khi ở nền tối, đổi màu các khối section và chữ cho dễ nhìn */
+body.dark-mode section, 
+body.dark-mode footer,
+body.dark-mode .about-section {
+  background-color: #1f2937 !important;
+  color: #f8fafc !important;
+}
+body.dark-mode h1, body.dark-mode h2, body.dark-mode h3 {
+  color: #ffffff !important;
+}
+
+/* --- TRẠNG THÁI 2: NỀN ẤM (WARM MODE) --- */
+body.warm-mode {
+  background-color: #fff7ed !important;
+  color: #431407 !important;
+}
+body.warm-mode section,
+body.warm-mode .about-section {
+  background-color: #ffedd5 !important;
+  color: #431407 !important;
+}
