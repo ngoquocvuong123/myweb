@@ -34,3 +34,25 @@ if (toggleAboutBtn && aboutContent) {
     aboutContent.classList.toggle("hidden");
   });
 }
+const menuToggle = document.getElementById("menuToggle");
+const mainMenu = document.getElementById("mainMenu");
+
+if (menuToggle && mainMenu) {
+  menuToggle.addEventListener("click", function () {
+    mainMenu.classList.toggle("active");
+    
+    if (mainMenu.classList.contains("active")) {
+      menuToggle.textContent = "✖ Đóng menu";
+    } else {
+      menuToggle.textContent = "☰ Menu";
+    }
+  });
+
+  const menuLinks = mainMenu.querySelectorAll("a");
+  menuLinks.forEach(function (link) {
+    link.addEventListener("click", function () {
+      mainMenu.classList.remove("active");
+      menuToggle.textContent = "☰ Menu";
+    });
+  });
+}
