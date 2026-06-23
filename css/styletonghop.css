@@ -490,3 +490,58 @@ button[type="submit"]:hover { background: #1d4ed8; }
 #toggleAboutBtn:hover {
   background-color: #1d4ed8;
 }
+/* ============================================================
+   BÀI 5: CSS CHO MENU TƯƠNG TÁC RESPONSIVE
+   ============================================================ */
+
+/* 1. Mặc định ẩn nút Menu trên máy tính/màn hình lớn */
+.menu-toggle {
+  display: none;
+  padding: 8px 16px;
+  background-color: var(--primary);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-weight: 700;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.menu-toggle:hover {
+  background-color: #1d4ed8;
+}
+
+/* 2. Xử lý hiển thị responsive khi co nhỏ màn hình (Mobile/Tablet) */
+@media (max-width: 768px) {
+  /* Hiện nút bấm kích hoạt menu lên */
+  .menu-toggle {
+    display: inline-block;
+  }
+
+  /* Định vị lại thanh menu đổ xuống dưới header */
+  .main-nav {
+    display: none; /* Mặc định ẩn đi */
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: white;
+    padding: 10px 0;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    border-top: 1px solid var(--border);
+    gap: 0;
+  }
+
+  .main-nav a {
+    padding: 12px 20px;
+    border-radius: 0;
+    width: 100%;
+  }
+
+  /* Class .active này sẽ được JS thêm vào để hiển thị menu */
+  .main-nav.active {
+    display: flex;
+  }
+}
