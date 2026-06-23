@@ -20,51 +20,50 @@ if (mainTitle && welcomeText) {
   welcomeText.textContent = "Nội dung này được cập nhật bằng file js/script.js.";
 }
 
-
-// --- BÀI 3: THÊM NÚT CHÀO MỪNG BẰNG SỰ KIỆN CLICK ---
+// --- BÀI 3: Nút Hello ---
 const helloBtn = document.getElementById("helloBtn");
 const helloResult = document.getElementById("helloResult");
 
-if (helloBtn && helloResult) {
+if (helloBtn) {
   helloBtn.addEventListener("click", function () {
-    helloResult.textContent = "Cảm ơn bạn đã ghé thăm MyWeb!";
+    helloResult.textContent = "🌊 Chào mừng bạn đến với Nha Trang — Thiên đường biển miền Trung!";
   });
 }
 
-
-// --- BÀI 4: ẨN/HIỆN NỘI DUNG GIỚI THIỆU ---
+// --- BÀI 4: Ẩn/Hiện nội dung Giới thiệu ---
 const toggleAboutBtn = document.getElementById("toggleAboutBtn");
-const aboutContent = document.getElementById("aboutContent");
+const aboutContent   = document.getElementById("aboutContent");
 
 if (toggleAboutBtn && aboutContent) {
   toggleAboutBtn.addEventListener("click", function () {
-    // Thêm hoặc xóa class "hidden" để ẩn/hiện vùng giới thiệu khi bấm nút
     aboutContent.classList.toggle("hidden");
+    toggleAboutBtn.textContent = aboutContent.classList.contains("hidden")
+      ? "Hiện nội dung"
+      : "Ẩn nội dung";
   });
 }
-// --- BÀI 5: MENU TƯƠNG TÁC CHO WEBSITE ---
+
+// --- BÀI 5: Menu responsive ---
 const menuToggle = document.getElementById("menuToggle");
-const mainMenu = document.getElementById("mainMenu");
+const mainMenu   = document.getElementById("mainMenu");
 
 if (menuToggle && mainMenu) {
-  // Sự kiện khi bấm vào nút Menu (Ẩn/Hiện)
   menuToggle.addEventListener("click", function () {
     mainMenu.classList.toggle("active");
-    
-    // MỞ RỘNG: Đổi chữ nút từ "☰ Menu" sang "✖ Đóng menu" và ngược lại
-    if (mainMenu.classList.contains("active")) {
-      menuToggle.textContent = "✖ Đóng menu";
-    } else {
-      menuToggle.textContent = "☰ Menu";
-    }
   });
+}
 
-  // MỞ RỘNG: Khi bấm vào một liên kết bất kỳ trong menu, tự động đóng menu lại
-  const menuLinks = mainMenu.querySelectorAll("a");
-  menuLinks.forEach(function (link) {
-    link.addEventListener("click", function () {
-      mainMenu.classList.remove("active");
-      menuToggle.textContent = "☰ Menu";
-    });
+// --- BÀI 6: Chọn màu / chủ đề giao diện ---
+const themeSelect = document.getElementById("themeSelect");
+
+if (themeSelect) {
+  themeSelect.addEventListener("change", function () {
+    // Xóa tất cả class theme cũ trước
+    document.body.classList.remove("dark-mode", "warm-mode");
+
+    // Nếu người dùng chọn theme khác mặc định thì thêm class mới
+    if (themeSelect.value !== "") {
+      document.body.classList.add(themeSelect.value);
+    }
   });
 }
