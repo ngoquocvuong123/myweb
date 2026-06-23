@@ -141,31 +141,32 @@ const formMessage = document.getElementById("formMessage");
 
 if (contactForm && fullName && email && formMessage) {
   contactForm.addEventListener("submit", function (event) {
-    // Ngăn chặn hành vi tải lại trang mặc định của Form khi bấm submit
+    // 5. Chặn hành vi mặc định (không cho tải lại trang)
     event.preventDefault();
 
+    // Loại bỏ khoảng trắng đầu/cuối bằng .trim()
     const nameValue = fullName.value.trim();
     const emailValue = email.value.trim();
 
-    // 1. Kiểm tra xem ô Họ tên có bị bỏ trống không
+    // Kiểm tra ô Họ tên trống
     if (nameValue === "") {
       formMessage.textContent = "Vui lòng nhập họ tên.";
       formMessage.style.color = "red";
-      return; // Dừng xử lý tiếp tục
+      return; // Dừng xử lý khi gặp lỗi
     }
 
-    // 2. Kiểm tra ô Email có trống hoặc thiếu ký tự '@' không
+    // Kiểm tra ô Email trống hoặc thiếu ký tự "@"
     if (emailValue === "" || !emailValue.includes("@")) {
-      formMessage.textContent = "Vui lòng nhập email hợp lệ (phải có ký tự @).";
+      formMessage.textContent = "Vui lòng nhập email hợp lệ.";
       formMessage.style.color = "red";
-      return; // Dừng xử lý tiếp tục
+      return; // Dừng xử lý khi gặp lỗi
     }
 
-    // 3. Nếu mọi dữ liệu nhập vào đều hợp lệ
+    // Nếu tất cả dữ liệu hợp lệ
     formMessage.textContent = "Thông tin đã hợp lệ. Cảm ơn bạn!";
     formMessage.style.color = "green";
     
-    // Tùy chọn: Xóa sạch dữ liệu trong form sau khi gửi thành công
+    // (Tùy chọn) Xóa sạch form sau khi gửi thành công
     contactForm.reset();
   });
 }
