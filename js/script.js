@@ -107,3 +107,29 @@ if (searchInput && searchItems.length > 0) {
     });
   });
 }
+// --- BÀI 8: LỌC GALLERY ẢNH THEO NHÓM ---
+const filterButtons = document.querySelectorAll(".filter-btn");
+const galleryItems = document.querySelectorAll(".gallery-item");
+
+if (filterButtons.length > 0 && galleryItems.length > 0) {
+  // Duyệt qua từng nút bấm lọc
+  filterButtons.forEach(function (button) {
+    button.addEventListener("click", function () {
+      // Lấy giá trị của nhóm cần lọc (all, nature, food, fun)
+      const filter = button.dataset.filter;
+
+      // Duyệt qua từng bức ảnh trong thư viện
+      galleryItems.forEach(function (item) {
+        // Lấy danh mục của bức ảnh hiện tại
+        const category = item.dataset.category;
+
+        // Nếu nút bấm là "Tất cả" hoặc danh mục của ảnh trùng khớp với nút bấm
+        if (filter === "all" || category === filter) {
+          item.style.display = ""; // Hiển thị ảnh thỏa điều kiện
+        } else {
+          item.style.display = "none"; // Ẩn ảnh không thuộc nhóm
+        }
+      });
+    });
+  });
+}
