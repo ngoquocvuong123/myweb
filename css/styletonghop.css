@@ -77,7 +77,7 @@ img {
    HERO
    ============================================================ */
 .hero {
-  padding: 52px 6%;
+  padding: 64px 6%;
   background: linear-gradient(135deg, var(--primary) 0%, #06b6d4 100%);
   color: white;
 }
@@ -86,40 +86,58 @@ img {
   font-size: 12px;
   letter-spacing: 3px;
   text-transform: uppercase;
-  opacity: 0.8;
-  margin-bottom: 10px;
-}
-
-#main-title {
-  font-size: clamp(28px, 5vw, 52px);
-  font-weight: 800;
-  line-height: 1.15;
-  margin-bottom: 14px;
+  opacity: 0.85;
+  margin-bottom: 12px;
+  font-weight: 600;
   color: white;
 }
 
+#mainTitle {
+  font-size: clamp(32px, 5vw, 56px);
+  font-weight: 800;
+  line-height: 1.15;
+  margin-bottom: 16px;
+  color: white;
+  text-shadow: 0 2px 8px rgba(0,0,0,0.25);
+}
+
 .intro {
-  font-size: 16px;
+  font-size: 18px;
+  font-weight: 600;
   line-height: 1.7;
   max-width: 560px;
-  opacity: 0.92;
-  margin-bottom: 24px;
+  margin-bottom: 28px;
+  color: white;
+  text-shadow: 0 1px 4px rgba(0,0,0,0.3);
+  opacity: 1;
 }
 
 .primary-button {
   display: inline-block;
-  padding: 11px 24px;
+  padding: 12px 28px;
   background: var(--accent);
   color: #fff;
   border-radius: 999px;
   font-weight: 700;
   font-size: 15px;
   transition: opacity 0.2s, transform 0.2s;
+  border: none;
+  cursor: pointer;
 }
 
 .primary-button:hover {
   opacity: 0.88;
   transform: translateY(-1px);
+}
+
+/* Lời chào hiện sau khi click */
+#helloResult {
+  margin-top: 16px;
+  font-size: 17px;
+  font-weight: 700;
+  color: white;
+  text-shadow: 0 2px 6px rgba(0,0,0,0.3);
+  min-height: 24px;
 }
 
 /* ============================================================
@@ -442,34 +460,4 @@ button[type="submit"]:hover {
 @media (max-width: 480px) {
   .main-nav { display: none; }
   .portfolio-grid { grid-template-columns: 1fr; }
-}
-/* Giao diện cơ bản cho phần Hero */
-.hero {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../img/biennhatrang.jpg');
-    background-size: cover;
-    background-position: center;
-    color: white;
-    padding: 100px 20px;
-    text-align: center;
-}
-
-.hero h1 {
-    font-size: 3rem;
-    margin-bottom: 10px;
-}
-
-.hero .intro {
-    font-size: 1.2rem;
-    margin-bottom: 20px;
-}
-
-/* Định dạng cho nút bấm trong phần Hero */
-.primary-button {
-    display: inline-block;
-    background-color: #007BFF;
-    color: white;
-    padding: 10px 20px;
-    text-decoration: none;
-    border-radius: 5px;
-    font-weight: bold;
 }
