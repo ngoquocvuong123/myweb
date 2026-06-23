@@ -10,6 +10,7 @@ body {
   font-family: 'Segoe UI', Arial, sans-serif;
   color: #1f2937;
   background-color: #f8fafc;
+  transition: background-color 0.3s, color 0.3s;
 }
 
 h1, h2, h3, h4, p { margin: 0; }
@@ -46,6 +47,7 @@ img {
   top: 0;
   z-index: 100;
   box-shadow: 0 1px 8px rgba(0,0,0,0.06);
+  transition: background-color 0.3s, border-color 0.3s;
 }
 
 .brand {
@@ -140,6 +142,24 @@ img {
   min-height: 24px;
 }
 
+/* Nút helloBtn trong hero */
+#helloBtn {
+  margin-left: 12px;
+  padding: 12px 24px;
+  background: rgba(255,255,255,0.2);
+  color: white;
+  border: 2px solid white;
+  border-radius: 999px;
+  font-weight: 700;
+  font-size: 15px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+#helloBtn:hover {
+  background: rgba(255,255,255,0.35);
+}
+
 /* ============================================================
    SECTIONS CHUNG
    ============================================================ */
@@ -228,6 +248,7 @@ blockquote {
   border-radius: 0 8px 8px 0;
   color: #555;
   margin: 0;
+  transition: background-color 0.3s, color 0.3s;
 }
 
 /* ============================================================
@@ -247,7 +268,7 @@ blockquote {
   background: #fff;
   box-shadow: var(--shadow);
   overflow: hidden;
-  transition: transform 0.2s, box-shadow 0.2s;
+  transition: transform 0.2s, box-shadow 0.2s, background-color 0.3s, border-color 0.3s;
 }
 
 .feature-card:hover {
@@ -303,6 +324,7 @@ blockquote {
   border-radius: var(--radius);
   background: white;
   overflow: hidden;
+  transition: background-color 0.3s, border-color 0.3s;
 }
 
 .image-strip figure img {
@@ -362,7 +384,7 @@ figcaption {
   border: 1px solid var(--border);
   border-radius: var(--radius);
   box-shadow: var(--shadow);
-  transition: transform 0.2s;
+  transition: transform 0.2s, background-color 0.3s, border-color 0.3s;
 }
 
 .portfolio-grid article:hover {
@@ -462,20 +484,47 @@ button[type="submit"]:hover {
   .portfolio-grid { grid-template-columns: 1fr; }
 }
 
-/* Nút helloBtn trong hero */
-#helloBtn {
+
+/* ============================================================
+   BÀI 4: STYLE CHO NÚT ĐỔI MÀU & CHẾ ĐỘ NỀN TỐI (DARK MODE)
+   ============================================================ */
+#themeBtn {
   margin-left: 12px;
   padding: 12px 24px;
-  background: rgba(255,255,255,0.2);
+  background: #10b981; /* Màu xanh lá nổi bật */
   color: white;
-  border: 2px solid white;
+  border: none;
   border-radius: 999px;
   font-weight: 700;
   font-size: 15px;
   cursor: pointer;
-  transition: background 0.2s;
+  transition: background 0.2s, transform 0.2s;
 }
 
-#helloBtn:hover {
-  background: rgba(255,255,255,0.35);
+#themeBtn:hover {
+  background: #059669;
+  transform: translateY(-1px);
+}
+
+/* Các thuộc tính thay đổi khi body có lớp .dark-mode */
+body.dark-mode {
+  background-color: #1e293b; /* Nền xám tối */
+  color: #f8fafc;
+}
+
+body.dark-mode .site-header,
+body.dark-mode .feature-card,
+body.dark-mode .image-strip figure,
+body.dark-mode .portfolio-grid article,
+body.dark-mode blockquote {
+  background-color: #334155; /* Nền tối hơn cho các khối nội dung */
+  color: #f8fafc;
+  border-color: #475569;
+}
+
+body.dark-mode h2, 
+body.dark-mode p, 
+body.dark-mode li, 
+body.dark-mode figcaption {
+  color: #cbd5e1; /* Đổi màu chữ sáng lên để dễ đọc */
 }
